@@ -56,10 +56,10 @@ const handelCart = (product) => {
 }
 
   return (
-    <div className='pl-[50px]'>
-      <div className='flex justify-between w-[97%]'>
+    <div className='pl-[50px] max-[600px]:relative bottom-12'>
+      <div className='flex justify-between w-[97%] max-[900px]:flex-col '>
         <h1 className='font-bold text-[32px] text-[#253D4E] '>Popular Products</h1>
-        <div  className='flex gap-[20px] font-medium'>
+        <div  className='flex flex-wrap  gap-[20px] font-medium'>
         <Link href="/" className="hover:text-[#F53E32] transition duration-300">All</Link>
         <Link href="/" className="hover:text-[#F53E32] transition duration-300">Milks & Dairies</Link>
         <Link href="/" className="hover:text-[#F53E32] transition duration-300">Coffes & Teas</Link>
@@ -70,11 +70,11 @@ const handelCart = (product) => {
 
         </div>
       </div>
-      <div className='flex flex-wrap gap-[24px] w-full'>
+      <div className='flex flex-wrap justify-center gap-[24px] w-full '>
         {products.map((data) => (
           <Link href={`/${data.id}`}
             key={data.id} 
-            className='w-[268px] h-[405px] bg-white rounded-[15px] border border-gray-200 shadow-sm p-3 flex flex-col justify-between relative transform transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-xl  '
+            className='w-[268px] h-[405px] bg-white rounded-[15px] border border-gray-200 shadow-sm p-3 flex flex-col justify-between relative transform transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-xl   '
           >
             {/* Badge */}
             {data.tag && (
@@ -133,7 +133,7 @@ const handelCart = (product) => {
       </div>
       <br></br>
       <br></br>
-      <div className='flex justify-between  w-[97%]'>
+      <div className='flex justify-between  w-[97%] max-[900px]:flex-wrap'>
         <h1 className='font-bold text-[32px] text-[#253D4E] '>Daily Best Sells</h1>
         <div className='flex gap-5'>
           <Link href="#" className="hover:text-[#F53E32] transition duration-300">Featured</Link> 
@@ -142,8 +142,8 @@ const handelCart = (product) => {
 
         </div>
       </div>
-        <div className='flex gap-4'>
-          <div className='w-[508px] h-[350px] mt-[40px] rounded-[15px] bg-amber-100'>
+        <div className='flex gap-4 max-[900px]:flex-wrap justify-center'>
+          <div className='w-[508px] h-[350px] mt-[40px] rounded-[15px] bg-amber-100 max-[900px]:'>
           <Image src="/banner11.svg" width={508} height={580} alt='rt'></Image>
           </div>
           <Swiper
@@ -151,13 +151,19 @@ const handelCart = (product) => {
         modules={[Navigation]}
         slidesPerView={4}    
         spaceBetween={0}     
-        className="mySwiper mt-6"
+        className="mySwiper   mt-6 max-[900px]:mt-[120px] "
+        breakpoints={{
+          1200: {slidesPerView:4},
+          800: {slidesPerView:3},
+          550: {slidesPerView:2},
+          300: {slidesPerView:1},
+        }}
       >
         {bestSells.map((data) => (
           <SwiperSlide key={data.id}>
             <Link
               href={`/${data.id}`}
-              className="w-[268px] h-[405px] bg-white rounded-[15px] border border-gray-200 shadow-sm p-3 flex flex-col justify-between relative"
+              className="w-[268px] h-[405px] bg-white rounded-[15px] border border-gray-200 shadow-sm p-3 flex flex-col justify-between relative "
             >
               {/* Badge */}
               {data.tag && (

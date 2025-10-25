@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 
 function CartPage() {
   const [cartItems, setCartItems] = useState([])
-  const [quantity,setQuantity] = useState()
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

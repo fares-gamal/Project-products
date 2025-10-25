@@ -98,7 +98,7 @@ const filteredProducts = (() => {
       </div>
 
      
-      <div className='w-full h-[86px] bg-[#FFFFFF] shadow-2xl flex justify-evenly items-center  max-[850px]:flex-wrap max-[1000px]:h-[132px] max-[550px]:h-[170px] '>
+      <div className='w-full h-[86px] bg-[#FFFFFF] shadow-2xl flex justify-evenly items-center  max-[850px]:flex-wrap max-[1000px]:h-[132px] max-[550px]:h-[200px] '>
         <div>
           <Image src='/FoodTrove.svg' alt="Food Trove Logo " width={163} height={87} className='max-[700px]:w-[130px] h-[66px]' />
         </div>
