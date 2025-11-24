@@ -56,6 +56,7 @@ function CartPage() {
               <p className="text-gray-600">{item.type} </p>
 
               <p className="text-gray-600">{item.quantity} </p>
+                 <p className="text-gray-600">Gamal waad</p>
             </div>
           </div>
         ))
